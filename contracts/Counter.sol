@@ -1,4 +1,9 @@
+
+//SPDX-License-Identifier:MIT
+
 pragma solidity ^0.8.0;
+
+
 
 
 contract Counter{
@@ -12,8 +17,8 @@ contract Counter{
         return count;
     }
 
-    function incrementCount public view return(uint){
-        count++;
+    function incrementCount() public  returns(uint){
+        count=count +1;
         return count;
     }
 }
