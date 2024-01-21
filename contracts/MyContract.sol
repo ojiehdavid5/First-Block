@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 
 contract MyContract{
 //State variable
-uint MyUint =1
+uint MyUint =1;
 
 int256 public myInt=1;
 uint256  public MyUint =1;
@@ -14,10 +14,10 @@ uint8  public MyUint =1;
 
 string public myString="my first string";
 byte32 public myByte32="Helloworld";
-address public myAddress=0xbgth0987654321234567890098765434567;
-struct public myStruct{
-uint256 myUint256,
-string myString
+address public myAddress=bgth0987654321234567890098765434567;
+struct  myStruct{
+uint256 myUint256
+string myString;
 
 }
 
