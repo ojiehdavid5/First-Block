@@ -3,28 +3,76 @@
 
 pragma solidity ^0.8.0;
 
+import "hardhat/console.sol";
+//Mapping
+
+    mapping(uint=>books) public books;
+
+mapping(uint=>string) names;
+
+    struct books{
+string title;
+string author;
 
 
-contract MyContract {
-
-//Arrays
-
-uint[] public uintArray=[1,2,3];
-
-string[] public stringArray=["Apple","Banana","mango"];
-string [] public values;
-
-
-function addValue(string memory _value) public {
-        values.push(_value);
     }
 
 
 
-function valueCount( ) public view returns(uint){
+constructor() public{
 
-return values.length;
+    names[1]='adams';
+    names[2]='chuks';
+    names[3]='gidi';
+
+
 }
+
+function addBooks(uint _id,string memory _title, string memory _author) public{
+    books[_id] =Book(-title,_author);
+
+}
+
+
+
+
+
+contract MyContract{
+
+
+
+
+
+
+}
+
+
+
+
+
+// contract MyContract {
+
+// //Arrays
+
+// console.log('first log');
+
+// uint[] public uintArray=[1,2,3];
+
+// string[] public stringArray=["Apple","Banana","mango"];
+// string [] public values;
+// uint256[][] public array2D= [[1,2,3], [4,5,6] ];
+
+
+// function addValue(string memory _value) public {
+//         values.push(_value);
+//     }
+
+
+
+// function valueCount( ) public view returns(uint){
+
+// return values.length;
+// }
 
 
 
