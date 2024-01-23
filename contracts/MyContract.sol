@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 import "hardhat/console.sol";
 //Mapping
 
-    mapping(uint=>books) public books;
+    mapping(uint=>books)  books;
 
 mapping(uint=>string) names;
 
