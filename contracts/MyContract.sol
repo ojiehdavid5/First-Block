@@ -7,27 +7,67 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
-contract MyContract {
-    // Mapping
-    mapping(uint => string) names;
-    mapping(uint => Book) books;
-    mapping(address => mapping(uint => Book)) public myBooks;
 
-    struct Book {
-        string title;
-        string author;
+
+
+contract MyContract{
+//conditions
+//Looping
+
+
+
+//IF (some codition)
+//THEN(do some action)
+//ELSE(DO SOME OTHER ACTION)
+
+
+
+
+uint[] public  numbers  =[1,2,3,4];
+
+
+function isNumberEven(uint _number)  public returns(bool) {
+
+    if( _numbers  % 2 == 0){
+        return true;
+    }else{
+        return false;
     }
 
-    constructor()  {
-        names[1] = "adams";
-        names[2] = "chuks";
-        names[3] = "gidi";
-    }
 
-    function addBooks(uint _id, string memory _title, string memory _author) public {
-        books[_id] = Book(_title, _author);
-    }
 }
+
+}
+
+
+// contract MyContract {
+//     // Mapping
+//     mapping(uint => string) names;
+//     mapping(uint => Book) books;
+//     mapping(address => mapping(uint => Book)) public myBooks;
+
+//     struct Book {
+//         string title;
+//         string author;
+//     }
+
+//     constructor()  {
+//         names[1] = "adams";
+//         names[2] = "chuks";
+//         names[3] = "gidi";
+//     }
+
+//     function addBooks(uint _id, string memory _title, string memory _author) public {
+//         books[_id] = Book(_title, _author);
+//     }
+
+
+
+//         function addmynBooks(uint _id, string memory _title, string memory _author) public {
+//         myBooks[msg.sender][_id] = Book(_title, _author);
+//     }
+
+// }
 
 
 
