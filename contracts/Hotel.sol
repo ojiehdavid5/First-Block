@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 
 
 contract HotelRoom{
-    //Ether payment
+    //////////Ether payment
     //Modifiers
     //visibility
     //Events
