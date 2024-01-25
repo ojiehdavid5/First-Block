@@ -11,51 +11,37 @@ import "hardhat/console.sol";
 
 
 contract MyContract{
-//conditions
-//Looping
+    uint[] public  numbers =[1,2,3,4,5,6,7,8,9,10];
+    address public owner;
 
+    constructor (){
+        owner = msg.sender;
+    }
 
+    function countEvenNumbers () public view returns(uint){
+        uint count=0;
+        for(uint i=0; i<numbers.length; i++){
+            if(isNumberEven(numbers[i])){
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    function isNumberEven(uint _number) public pure returns(bool) {
+        if( _number  % 2 == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
-//IF (some codition)
-//THEN(do some action)
-//ELSE(DO SOME OTHER ACTION)
-
-
-
-
-uint[] public  number =[1,2,3,4,5,6,7,8,9,10];
-
-
-function countEvenNumbers () public view returns(uint){
-uint count=0;
-
-for(uint i=0; i<number.length; i++){
-
-    if(isNumberEven(number[i])){
-        count++;
+    function isOwner() public view returns(bool) {
+        return(msg.sender == owner);
     }
 }
 
 
-
- return count;
-
-
-}
-
-
-function isNumberEven(uint _number)  public returns(bool) {
-
-    if( _number  % 2 == 0){
-        return true;
-    }else{
-        return false;
-    }
-
-
-}
-
-}
 
 
 // contract MyContract {
