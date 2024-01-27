@@ -15,26 +15,26 @@ contract HotelRoom{
 
     //vacant 
     //occupy
-    enum Statuses{Vacant,Occupied};
+    enum Statuses{Vacant,Occupied}
 
 
 
-    event Occuppy(address _occupant,uint _value);
+event Occupy(address _occupant,uint _value);
 
-
-    Statuses currentStatuses;
+    Statuses public currentStatuses;
 
 
 
 address payable public owner;
 
 constructor(){
-    owner=msg.sender;
+    owner=payable(msg.sender);
 }
 
 
 modifier  onlyWhileVacant{
-        require(currentStatuses==Statuses.vacant,'currently occupied');
+        require(currentStatuses==Statuses.Vacant,'currently occupied');
+        _;
 
 }
 
@@ -42,20 +42,25 @@ modifier  onlyWhileVacant{
 modifier costs(uint _amount){
 
 require(msg.value>= _amount ,'Not enough ether provided');
+_;
 
 
 }
-    function book() payable onlyWhileVacant costs(2 ether) {
+    function book() public  payable onlyWhileVacant costs(2 ether) {
 
         //check price
 
         //check status
 
-        currentStatuses=Statuses.Occupied
+        currentStatuses=Statuses.Occupied;
 
         owner.transfer(msg.value);
-       (bool sent,bytes memory data)= owner.call{value:msg.value}("");
-       require(true);
+
+(bool success, ) = owner.call{value: msg.value}("");
+
+         require(success,'Transfer failed');
+
+
 
         emit Occupy(msg.sender, msg.value);
 
